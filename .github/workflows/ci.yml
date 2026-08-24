@@ -23,6 +23,7 @@ jobs:
 
       - name: mismatch fixture should have findings
         run: |
+          set +e
           node dist/cli.js declare fixtures/mismatch --min-findings 1 --quiet
           code=$?
           if [ "$code" -eq 1 ]; then
