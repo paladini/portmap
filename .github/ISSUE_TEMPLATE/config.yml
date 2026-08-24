@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & showcase
+    url: https://github.com/paladini/portmap/discussions
+    about: Ask questions, share how you use portmap with agents — not a bug report
+  - name: False positive guide
+    url: https://github.com/paladini/portmap/blob/main/docs/FINDINGS.md
+    about: Look up finding IDs before filing — helps us fix heuristics faster

@@ -1,0 +1,46 @@
+name: False positive
+description: Scanner flagged something that is already correct
+title: "[false-positive]: "
+labels: ["false-positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        portmap prefers false negatives — if it flagged something incorrectly, we want to fix the heuristic.
+  - type: input
+    id: finding-id
+    attributes:
+      label: Finding ID
+      placeholder: PRT-04
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File or config path
+      placeholder: vite.config.ts
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Stack
+      options:
+        - Vite
+        - Next.js
+        - Docker Compose
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Why is this a false positive?
+      description: Point to the config, listener, or env ref portmap missed.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: portmap output (paste JSON or terminal)
+      render: shell

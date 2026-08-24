@@ -24,6 +24,7 @@ Repo: https://github.com/paladini/portmap
 - `fixtures/` — mismatch, full-stack, frontend-only, workspace
 - `docs/FINDINGS.md` — full rule catalog
 - `docs/SCHEMA.md` — `.portmap.json` spec
+- `docs/EXAMPLES.md` — before/after fixes from fixtures
 
 ## Build & test
 

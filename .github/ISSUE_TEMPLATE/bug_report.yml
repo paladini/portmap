@@ -1,0 +1,51 @@
+name: Bug report
+description: Something crashed or produced wrong output
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Include the command you ran and the output you got vs expected.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: portmap version
+      placeholder: 0.1.0
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      placeholder: 20.x
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - WSL
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      render: shell
+      placeholder: |
+        portmap scan ./my-app --json
+    validations:
+      required: true

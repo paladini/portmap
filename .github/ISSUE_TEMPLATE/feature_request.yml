@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a new parser, finding rule, or integration
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New finding rules need a stable PRT-* ID and must stay deterministic (no LLM). See CONTRIBUTING.md.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the local dev / agent pain point.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: What should portmap detect or emit?
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New parser (config file / framework)
+        - New finding rule (PRT-*)
+        - MCP / agent integration
+        - CLI / output format
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example repo or config snippet
+      render: shell
