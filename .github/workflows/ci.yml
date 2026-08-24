@@ -22,7 +22,15 @@ jobs:
       - run: npm test
 
       - name: mismatch fixture should have findings
-        run: node dist/cli.js declare fixtures/mismatch --min-findings 1 --quiet
+        run: |
+          node dist/cli.js declare fixtures/mismatch --min-findings 1 --quiet
+          code=$?
+          if [ "$code" -eq 1 ]; then
+            echo "OK: mismatch fixture triggered findings gate (exit 1)"
+            exit 0
+          fi
+          echo "Expected exit 1 when findings are present, got $code"
+          exit 1
 
       - name: workspace fixture should pass cross-ref check
         run: node dist/cli.js workspace fixtures/workspace --json --quiet
