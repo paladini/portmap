@@ -1,0 +1,7 @@
+{
+  "name": "workspace-api",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js -p 8080"
+  }
+}

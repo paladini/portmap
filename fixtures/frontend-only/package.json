@@ -1,0 +1,7 @@
+{
+  "name": "frontend-only",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  }
+}

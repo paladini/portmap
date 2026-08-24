@@ -1,0 +1,9 @@
+services:
+  api:
+    image: node:20
+    ports:
+      - "8080:8080"
+  web:
+    build: .
+    ports:
+      - "3000:3000"

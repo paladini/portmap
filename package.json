@@ -1,0 +1,58 @@
+{
+  "name": "portmap",
+  "version": "0.1.0",
+  "description": "Deterministic local service topology for AI agents. Maps declared ports, runtime listeners, and env references into .portmap.json. Zero LLM.",
+  "type": "module",
+  "bin": {
+    "portmap": "dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/tests/**/*.test.js",
+    "scan": "node dist/cli.js",
+    "demo:mismatch": "node dist/cli.js scan fixtures/mismatch",
+    "demo:full-stack": "node dist/cli.js scan fixtures/full-stack",
+    "demo:workspace": "node dist/cli.js workspace fixtures/workspace",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "localhost",
+    "ports",
+    "developer-tools",
+    "mcp",
+    "ai-agents",
+    "static-analysis",
+    "dev-environment"
+  ],
+  "author": "Fernando Paladini",
+  "license": "MIT",
+  "homepage": "https://github.com/paladini/portmap#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paladini/portmap.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0"
+  }
+}

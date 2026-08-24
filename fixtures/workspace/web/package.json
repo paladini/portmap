@@ -1,0 +1,7 @@
+{
+  "name": "workspace-web",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  }
+}
