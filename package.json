@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node --test dist/tests/**/*.test.js",
+    "test": "npm run build && node --test dist/tests/cli.test.js dist/tests/scan.test.js",
     "scan": "node dist/cli.js",
     "demo:mismatch": "node dist/cli.js scan fixtures/mismatch",
     "demo:full-stack": "node dist/cli.js scan fixtures/full-stack",
